@@ -1,0 +1,91 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    
+    <!-- <form action="/listings/new">
+        <button>Create new listing</button>
+    </form> -->
+    <style>
+        #filters{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .filter{
+            text-align: center;
+            margin-right: 1.8rem;
+            margin-top: 1.5rem;
+            opacity: 0.8;
+        }
+        .filter:hover{
+            opacity: 1;
+            cursor: pointer;
+        }
+        .filter p{
+            font-size: 0.8rem;
+        }
+    </style>
+    <div id="filters">
+        <div class="filter">
+            <div><i class="fa-solid fa-fire"></i></div>
+            <p>Trending</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-bed"></i></div>
+            <p>Rooms</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-mountain-city"></i></div>
+            <p>Iconic Cities</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-mountain"></i></div>
+            <p>Mountain</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-brands fa-fort-awesome"></i></div>
+            <p>Castles</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-person-swimming"></i></div>
+            <p>Amazing Pools</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-campground"></i></div>
+            <p>Camping</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-cow"></i></div>
+            <p>Farms</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-snowflake"></i></div>
+            <p>Arctic</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-campground"></i></div>
+            <p>Camping</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-brands fa-fort-awesome"></i></div>
+            <p>Castles</p>
+        </div>
+        
+    </div>
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-xm-1 mt-3">
+        <%  for(let listing of allListing){%>
+            <a href="/listings/<%= listing._id %>" class="listing-link">
+                <div class="card listing-card" >
+                    <img src="<%= listing.image.url %>" class="card-img-top" style="height: 20rem;" alt="Image loading">
+                    <div class="card-img-overlay">
+                        Click
+                      </div>
+                    <div class="card-body">
+                      <b><p class="card-text"><%= listing.title %></p></b>
+                      <p>&#8377;<%= listing.price %>/Night</p>
+                    </div>
+                  </div></a>
+           
+            <!-- <li><a href="listings/<%=listing._id%>"><%= listing.title %></a></li> -->
+        <% } %>
+    </div>
+    
+</body>
